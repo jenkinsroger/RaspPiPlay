@@ -17,7 +17,7 @@ namespace RaspPiPlay
 
             for (int i = 0; i < MainPage.spi.PixelCount; i++) 
             {
-                pixelColors.Add(Color);
+                pixelColors.Add(Color.FromArgb(60, Color.R,Color.G,Color.B));
             }
 
             SPIclass.SendPixels(pixelColors);

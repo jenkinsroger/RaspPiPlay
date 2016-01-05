@@ -7,8 +7,11 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <ComboBox x:Name="colorlistbox" ItemsSource="{Binding ColorsNamed}" Margin="10,31,0,0" Width="145" PlaceholderText="SELECT COLOR">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush Stretch="Fill" ImageSource="Assets/desktop-abstract-backgrounds-images-dowload.jpg"/>
+        </Grid.Background>
+        <ComboBox x:Name="colorlistbox" ItemsSource="{Binding ColorsNamed}" Margin="69,112,0,0" Width="145" PlaceholderText="SELECT COLOR" Foreground="White" Background="Red">
             <ComboBox.ItemTemplate>
                 <DataTemplate>
                     <Grid>
@@ -27,6 +30,8 @@
                 </DataTemplate>
             </ComboBox.ItemTemplate>
         </ComboBox>
-        <Button x:Name="btnColorSender" Content="SELECT" HorizontalAlignment="Left" Margin="160,32,0,0" VerticalAlignment="Top" Click="btnColorSender_Click"/>
+        <Button x:Name="btnColorSender" Content="SELECT" HorizontalAlignment="Left" Margin="219,113,0,0" VerticalAlignment="Top" Click="btnColorSender_Click" Foreground="White" Background="Red"/>
+        <Slider x:Name="slider" HorizontalAlignment="Left" Margin="69,60,0,0" VerticalAlignment="Top" Width="218" Maximum="255" Height="33" Foreground="Red" Background="Red" Value="60"/>
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="69,40,0,0" TextWrapping="Wrap" Text="BRIGHTNESS:" VerticalAlignment="Top" Foreground="Red"/>
     </Grid>
 </Page>

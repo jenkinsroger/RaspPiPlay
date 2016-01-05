@@ -46,7 +46,7 @@ namespace RaspPiPlay
 
         public async void StartSPI()
         {
-            spiDevice = await getSpiDevice();
+            //spiDevice = await getSpiDevice();
             await Begin();
 
             PixelCount = 36;
