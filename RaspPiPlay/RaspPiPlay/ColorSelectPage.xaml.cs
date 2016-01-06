@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Threading.Tasks;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI;
@@ -51,10 +52,23 @@ namespace RaspPiPlay
         {
             Color getcolor = ColorsNamed[colorlistbox.SelectedIndex].Color;
 
-            //var dialog = new MessageDialog(ColorsNamed[colorlistbox.SelectedIndex].Color.ToString());
-            //await dialog.ShowAsync();
-
             LedStrip.AllOneColor(getcolor);
+        }
+
+        private void btnFader_Click(object sender, RoutedEventArgs e)
+        {
+            Color getcolor = ColorsNamed[colorlistbox.SelectedIndex].Color;
+            LedStrip.FadeLedString(getcolor);
+        }
+
+        private void btnRainbow_Click(object sender, RoutedEventArgs e)
+        {
+            LedStrip.Rainbow_Click();
+        }
+
+        private void btnCFader_Click(object sender, RoutedEventArgs e)
+        {
+            LedStrip.ColorsFade();
         }
     }
 
