@@ -36,5 +36,6 @@
         <Button x:Name="btnFader" Content="FADER" HorizontalAlignment="Left" Margin="209,150,0,0" VerticalAlignment="Top" Click="btnFader_Click" Foreground="White" Background="Red" Width="68"/>
         <Button x:Name="btnRainbow" Content="XMAS" HorizontalAlignment="Left" Margin="282,112,0,0" VerticalAlignment="Top" Click="btnRainbow_Click" Foreground="White" Background="Red"/>
         <Button x:Name="btnCFader" Content="C FADE" HorizontalAlignment="Left" Margin="282,150,0,0" VerticalAlignment="Top" Click="btnCFader_Click" Foreground="White" Background="Red" Width="68"/>
+        <Button x:Name="btnTwinkle" Content="TWINKLE" HorizontalAlignment="Left" Margin="59,150,0,0" VerticalAlignment="Top" Click="btnTwinkle_Click" Foreground="White" Background="Red" Width="68" FontSize="12"/>
     </Grid>
 </Page>

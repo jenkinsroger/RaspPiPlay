@@ -70,6 +70,12 @@ namespace RaspPiPlay
         {
             LedStrip.ColorsFade();
         }
+
+        private void btnTwinkle_Click(object sender, RoutedEventArgs e)
+        {
+            Color getcolor = ColorsNamed[colorlistbox.SelectedIndex].Color;
+            LedStrip.Twinkle(getcolor);
+        }
     }
 
     public class NamedColor

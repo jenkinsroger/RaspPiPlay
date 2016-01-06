@@ -76,7 +76,7 @@ namespace RaspPiPlay
                 pixelColors.Add(Color.FromArgb(60, 255, 0, 0));     // Red
                 pixelColors.Add(Color.FromArgb(60, 0, 255, 0));     // Green
                 pixelColors.Add(Color.FromArgb(60, 0, 0, 255));     // Blue
-                pixelColors.Add(Color.FromArgb(60, 254, 255, 0));     // Yellow
+                pixelColors.Add(Color.FromArgb(60, 255, 255, 0));     // Yellow
                 pixelColors.Add(Color.FromArgb(60, 255, 0, 255));     // pink
                 pixelColors.Add(Color.FromArgb(60, 0, 255, 255));     // cyan
 
@@ -89,6 +89,19 @@ namespace RaspPiPlay
         {
             Task.Run(() =>
             {
+                while(true)
+                {
+                    Random Brightness = new Random();
+                    pixelColors = new List<Color>();
+
+                    for (int i = 0; i < MainPage.spi.PixelCount; i++)
+                    {
+                        pixelColors.Add(Color.FromArgb((byte)Brightness.Next(0,255), color.R, color.G, color.B));
+                    }
+
+                    SPIclass.SendPixels(pixelColors);
+                    Task.Delay(50).Wait();
+                }
 
             });
         }
@@ -113,65 +126,49 @@ namespace RaspPiPlay
                 {
                     pixelColors = new List<Color>();
 
-                    while(red >= 0 || green <= 255)
+                    for (int i = 0; i < MainPage.spi.PixelCount; i++)
                     {
-                        for (int i = 0; i < MainPage.spi.PixelCount; i++)
-                        {
-                            pixelColors.Add(Color.FromArgb((byte)Brightness, (byte)red, (byte)green, (byte)blue));
-                        }
+                        pixelColors.Add(Color.FromArgb((byte)Brightness, (byte)red, (byte)green, (byte)blue));
+                    }
+                    SPIclass.SendPixels(pixelColors);
 
-                        SPIclass.SendPixels(pixelColors);
-                        red -= changeamount;
-                        green += changeamount;
-
-                        Task.Delay(25).Wait();
+                    if (red == 255 && green < 255)
+                    {
+                        if (green == 255) break;
+                        green = green + changeamount;
+                    }
+                    else if(red >0 && green ==255)
+                    {
+                        if (red == 0) break;
+                        red = red - changeamount;
+                    }
+                    else if (green == 255 && blue <255)
+                    {
+                        if (blue == 255) break;
+                        blue = blue + changeamount;
+                    }
+                    else if(green > 0 && blue == 255)
+                    {
+                        if (green == 0) break;
+                        green = green - changeamount;
+                    }
+                    else if (red < 255 && blue == 255)
+                    {
+                        if (red == 255) break;
+                        red = red + changeamount;
+                    }
+                    else if (red == 255 && blue > 0)
+                    {
+                        if (blue == 0) break;
+                        blue = blue - changeamount;
                     }
 
-                    //while (green >= 0 || blue <= 255)
-                    //{
-                    //    for (int i = 0; i < MainPage.spi.PixelCount; i++)
-                    //    {
-                    //        pixelColors.Add(Color.FromArgb((byte)Brightness, (byte)red, (byte)green, (byte)blue));
-                    //    }
-
-                    //    SPIclass.SendPixels(pixelColors);
-                    //    green -= changeamount;
-                    //    blue += changeamount;
-
-                    //    Task.Delay(25).Wait();
-                    //}
-
-                    //while (blue >= 0 || red <= 255)
-                    //{
-                    //    for (int i = 0; i < MainPage.spi.PixelCount; i++)
-                    //    {
-                    //        pixelColors.Add(Color.FromArgb((byte)Brightness, (byte)red, (byte)green, (byte)blue));
-                    //    }
-
-                    //    SPIclass.SendPixels(pixelColors);
-                    //    blue -= changeamount;
-                    //    red += changeamount;
-
-                    //    Task.Delay(25).Wait();
-                    //}
-
-                    //while (red >= 0)
-                    //{
-                    //    for (int i = 0; i < MainPage.spi.PixelCount; i++)
-                    //    {
-                    //        pixelColors.Add(Color.FromArgb((byte)Brightness, (byte)red, (byte)green, (byte)blue));
-                    //    }
-
-                    //    SPIclass.SendPixels(pixelColors);
-                    //    red -= changeamount;
-
-                    //    Task.Delay(25).Wait();
-                    //}
-
+                    Task.Delay(30).Wait();
                 }
             });
 
 
         }
+
     }
 }
