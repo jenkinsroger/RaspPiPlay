@@ -7,11 +7,11 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid>
+    <Grid Margin="0,0,-0.375,-41">
         <Grid.Background>
             <ImageBrush Stretch="Fill" ImageSource="Assets/desktop-abstract-backgrounds-images-dowload.jpg"/>
         </Grid.Background>
-        <ComboBox x:Name="colorlistbox" ItemsSource="{Binding ColorsNamed}" Margin="59,111,0,0" Width="145" PlaceholderText="SELECT COLOR" Foreground="White" Background="Red">
+        <ComboBox x:Name="colorlistbox" ItemsSource="{Binding ColorsNamed}" Margin="82,10,0,0" Width="145" PlaceholderText="SELECT COLOR" Foreground="White" Background="Red">
             <ComboBox.ItemTemplate>
                 <DataTemplate>
                     <Grid>
@@ -30,12 +30,12 @@
                 </DataTemplate>
             </ComboBox.ItemTemplate>
         </ComboBox>
-        <Button x:Name="btnColorSender" Content="SELECT" HorizontalAlignment="Left" Margin="209,113,0,0" VerticalAlignment="Top" Click="btnColorSender_Click" Foreground="White" Background="Red"/>
-        <Slider x:Name="slider" HorizontalAlignment="Left" Margin="69,60,0,0" VerticalAlignment="Top" Width="218" Maximum="255" Height="33" Foreground="Red" Background="Red" Value="60"/>
-        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="69,40,0,0" TextWrapping="Wrap" Text="BRIGHTNESS:" VerticalAlignment="Top" Foreground="Red"/>
-        <Button x:Name="btnFader" Content="FADER" HorizontalAlignment="Left" Margin="209,150,0,0" VerticalAlignment="Top" Click="btnFader_Click" Foreground="White" Background="Red" Width="68"/>
-        <Button x:Name="btnRainbow" Content="XMAS" HorizontalAlignment="Left" Margin="282,112,0,0" VerticalAlignment="Top" Click="btnRainbow_Click" Foreground="White" Background="Red"/>
-        <Button x:Name="btnCFader" Content="C FADE" HorizontalAlignment="Left" Margin="282,150,0,0" VerticalAlignment="Top" Click="btnCFader_Click" Foreground="White" Background="Red" Width="68"/>
-        <Button x:Name="btnTwinkle" Content="TWINKLE" HorizontalAlignment="Left" Margin="59,150,0,0" VerticalAlignment="Top" Click="btnTwinkle_Click" Foreground="White" Background="Red" Width="68" FontSize="12"/>
+        <Button x:Name="btnColorSender" Content="SELECT" HorizontalAlignment="Left" Margin="232,9,0,0" VerticalAlignment="Top" Click="btnColorSender_Click" Foreground="White" Background="Red"/>
+        <Button x:Name="btnFader" Content="FADER" HorizontalAlignment="Left" Margin="159,57,0,0" VerticalAlignment="Top" Click="btnFader_Click" Foreground="White" Background="Red" Width="68"/>
+        <Button x:Name="btnRainbow" Content="XMAS" HorizontalAlignment="Left" Margin="94,57,0,0" VerticalAlignment="Top" Click="btnRainbow_Click" Foreground="White" Background="Red"/>
+        <Button x:Name="btnCFader" Content="C FADE" HorizontalAlignment="Left" Margin="232,57,0,0" VerticalAlignment="Top" Click="btnCFader_Click" Foreground="White" Background="Red" Width="68"/>
+        <Button x:Name="btnTwinkle" Content="TWINKLE" HorizontalAlignment="Left" Margin="86,94,0,0" VerticalAlignment="Top" Click="btnTwinkle_Click" Foreground="White" Background="Red" Width="68" FontSize="12"/>
+        <Button x:Name="btnCylon" Content="CYLON" HorizontalAlignment="Left" Margin="159,94,0,0" VerticalAlignment="Top" Click="btnCylon_Click" Foreground="White" Background="Red" Width="68" FontSize="12"/>
+        <Button x:Name="btnColorShift" Content="Shift" HorizontalAlignment="Left" Margin="232,94,0,0" VerticalAlignment="Top" Click="btnColorShift_Click" Foreground="White" Background="Red" Width="68" FontSize="12" Height="28"/>
     </Grid>
 </Page>

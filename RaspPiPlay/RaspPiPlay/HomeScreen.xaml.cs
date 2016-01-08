@@ -22,15 +22,19 @@ namespace RaspPiPlay
     /// </summary>
     public sealed partial class HomeScreen : Page
     {
+        public static HomeScreen _main;
+
         public HomeScreen()
         {
             this.InitializeComponent();
+            _main = this;
         }
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
             Frame rootFrame = Window.Current.Content as Frame;
             rootFrame.Navigate(typeof(MainPage));
+
         }
     }
 }

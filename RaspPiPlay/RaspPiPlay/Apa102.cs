@@ -170,5 +170,93 @@ namespace RaspPiPlay
 
         }
 
+        public void cyclon()
+        {
+            int Brightness = 255;
+            int red = 0;
+            int green = 0;
+            int blue = 0;
+
+            int top = 3;
+            int center = 2;
+            int botton = 1;
+
+            int location = 0;
+
+            Task.Run(() =>
+            {
+                while (true)
+                {
+                    while ((location + top) < MainPage.spi.PixelCount)
+                    {
+                        if ((location + top) == (MainPage.spi.PixelCount - 1)) break;
+
+                        pixelColors = new List<Color>();
+
+                        for (int i = 0; i < MainPage.spi.PixelCount; i++)
+                        {
+                            pixelColors.Add(Color.FromArgb((byte)Brightness, (byte)red, (byte)green, (byte)blue));
+                        }
+
+                        pixelColors[top + location] = Color.FromArgb((byte)Brightness, 255, (byte)green, (byte)blue);
+                        pixelColors[center + location] = Color.FromArgb((byte)Brightness, 255, (byte)green, (byte)blue);
+                        pixelColors[botton + location] = Color.FromArgb((byte)Brightness, 255, (byte)green, (byte)blue);
+
+                        SPIclass.SendPixels(pixelColors);
+                        Task.Delay(30).Wait();
+                        location++;
+                    }
+
+                    while ((location + botton) < MainPage.spi.PixelCount)
+                    {
+                        if ((location + botton) == 0) break;
+
+                        pixelColors = new List<Color>();
+
+                        for (int i = 0; i < MainPage.spi.PixelCount; i++)
+                        {
+                            pixelColors.Add(Color.FromArgb((byte)Brightness, (byte)red, (byte)green, (byte)blue));
+                        }
+
+                        pixelColors[top + location] = Color.FromArgb((byte)Brightness, 255, (byte)green, (byte)blue);
+                        pixelColors[center + location] = Color.FromArgb((byte)Brightness, 255, (byte)green, (byte)blue);
+                        pixelColors[botton + location] = Color.FromArgb((byte)Brightness, 255, (byte)green, (byte)blue);
+
+                        SPIclass.SendPixels(pixelColors);
+                        Task.Delay(25).Wait();
+                        location--;
+                    }
+                }
+            });
+        }
+
+        public void ColorShift()
+        {
+            int location = 0;
+            int pixelcount = MainPage.spi.PixelCount;
+
+            int Brightness = 255;
+            int red = 10;
+            int green = 0;
+            int blue = 10;
+
+
+            Task.Run(() =>
+            {
+                pixelColors = new List<Color>();
+
+                for (int i = 0; i < pixelcount; i++)
+                {
+                    pixelColors.Add(Color.FromArgb(0, 0, 0, 0));
+                }
+
+                
+
+                while (true)
+                {
+                    
+                }
+            });
+        }
     }
 }

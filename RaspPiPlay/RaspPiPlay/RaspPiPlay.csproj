@@ -102,6 +102,7 @@
     <Compile Include="ColorSelectPage.xaml.cs">
       <DependentUpon>ColorSelectPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DHT11Class.cs" />
     <Compile Include="HomeScreen.xaml.cs">
       <DependentUpon>HomeScreen.xaml</DependentUpon>
     </Compile>
@@ -162,6 +163,11 @@
     <SDKReference Include="WindowsTeam, Version=10.0.10586.0">
       <Name>Windows Team Extensions for the UWP</Name>
     </SDKReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Sensors.Dht">
+      <HintPath>..\..\..\..\..\Downloads\porrey-dht-b4539b7\source\Windows 10 IoT Core\DHT Solution\ARM\Debug\Sensors.Dht\Sensors.Dht.winmd</HintPath>
+    </Reference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>

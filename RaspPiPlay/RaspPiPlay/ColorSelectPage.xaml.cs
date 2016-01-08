@@ -76,6 +76,16 @@ namespace RaspPiPlay
             Color getcolor = ColorsNamed[colorlistbox.SelectedIndex].Color;
             LedStrip.Twinkle(getcolor);
         }
+
+        private void btnCylon_Click(object sender, RoutedEventArgs e)
+        {
+            LedStrip.cyclon();
+        }
+
+        private void btnColorShift_Click(object sender, RoutedEventArgs e)
+        {
+            LedStrip.ColorShift();
+        }
     }
 
     public class NamedColor

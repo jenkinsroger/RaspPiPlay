@@ -12,7 +12,7 @@
             <ImageBrush Stretch="Fill" ImageSource="Assets/desktop-abstract-backgrounds-images-dowload.jpg"/>
         </Grid.Background>
         <TextBlock x:Name="textBlock" Margin="10,42,10,0" TextWrapping="Wrap" Text="12:00 pm" VerticalAlignment="Top" Foreground="White" TextAlignment="Center" FontSize="40"/>
-        <TextBlock x:Name="textBlock_Copy" Margin="10,0,0,10" TextWrapping="Wrap" Text="76 °F" VerticalAlignment="Bottom" Foreground="#FF36FB0B" TextAlignment="Center" FontSize="40" Grid.Row="1" HorizontalAlignment="Left" Width="146"/>
+        <TextBlock x:Name="txtTemp" Margin="10,0,0,10" TextWrapping="Wrap" Text="76 °F" VerticalAlignment="Bottom" Foreground="#FF36FB0B" TextAlignment="Center" FontSize="40" Grid.Row="1" HorizontalAlignment="Left" Width="146"/>
         <Button x:Name="button" Content="SETTINGS" HorizontalAlignment="Right" Margin="0,0,10,10" VerticalAlignment="Bottom" Background="#59FFFFFF" Foreground="White" Height="30" Width="90" Grid.Row="1" Click="button_Click"/>
         <TextBlock x:Name="textBlock_Copy1" Margin="10,10,10,0" TextWrapping="Wrap" Text="TUES JAN 05 2016" VerticalAlignment="Top" Foreground="White" TextAlignment="Center" FontSize="20"/>
 
