@@ -11,13 +11,18 @@ namespace RaspPiPlay
     {
         List<Color> pixelColors = new List<Color>();
 
+        public static bool CyclonRun = false;
+        public static bool ColorFadeRun = false;
+        public static bool TwinkleRun = false;
+        public static bool fadeRun = false;
+        public static bool ColorShiftRun = false;
         public void AllOneColor(Color Color)
         {
             pixelColors = new List<Color>();
 
             for (int i = 0; i < MainPage.spi.PixelCount; i++) 
             {
-                pixelColors.Add(Color.FromArgb(60, Color.R,Color.G,Color.B));
+                pixelColors.Add(Color.FromArgb(255, Color.R,Color.G,Color.B));
             }
 
             SPIclass.SendPixels(pixelColors);
@@ -28,10 +33,10 @@ namespace RaspPiPlay
             Task.Run(() =>
             {
                 int Brightness = 1;
-                int CurrentCycle = 0;
-                int NumberOfCycles = 10;
 
-                while (CurrentCycle < NumberOfCycles)
+                fadeRun = true;
+
+                while (fadeRun)
                 {
 
                     while (Brightness < 126)
@@ -62,7 +67,7 @@ namespace RaspPiPlay
                         Task.Delay(30).Wait();
                     }
 
-                    CurrentCycle++;
+                   
                 }
             });
         }
@@ -87,9 +92,10 @@ namespace RaspPiPlay
 
         public void Twinkle(Color color)
         {
+            TwinkleRun = true;
             Task.Run(() =>
             {
-                while(true)
+                while(TwinkleRun)
                 {
                     Random Brightness = new Random();
                     pixelColors = new List<Color>();
@@ -120,9 +126,11 @@ namespace RaspPiPlay
 
             Color StartColor = Color.FromArgb((byte)Brightness, (byte)red, (byte)green, (byte)blue);
 
+            ColorFadeRun = true;
+
             Task.Run(() =>
             {
-                while (true)
+                while (ColorFadeRun)
                 {
                     pixelColors = new List<Color>();
 
@@ -183,9 +191,10 @@ namespace RaspPiPlay
 
             int location = 0;
 
+            CyclonRun = true;
             Task.Run(() =>
             {
-                while (true)
+                while (CyclonRun)
                 {
                     while ((location + top) < MainPage.spi.PixelCount)
                     {
@@ -236,25 +245,99 @@ namespace RaspPiPlay
             int pixelcount = MainPage.spi.PixelCount;
 
             int Brightness = 255;
-            int red = 10;
+            int red = 0;
             int green = 0;
-            int blue = 10;
+            int blue = 0;
 
+            int changeamount = 10;
+
+            pixelColors = new List<Color>();
+
+            for (int i = 0; i < MainPage.spi.PixelCount; i++)
+            {
+                pixelColors.Add(Color.FromArgb((byte)Brightness, (byte)red, (byte)green, (byte)blue));
+            }
+            SPIclass.SendPixels(pixelColors);
+
+            ColorShiftRun = true;
 
             Task.Run(() =>
             {
-                pixelColors = new List<Color>();
-
-                for (int i = 0; i < pixelcount; i++)
+                red = 250;
+                while(ColorShiftRun)
                 {
-                    pixelColors.Add(Color.FromArgb(0, 0, 0, 0));
-                }
+                    if (location == 36) location = 0;
+                    pixelColors[location] = Color.FromArgb((byte)Brightness, (byte)red, (byte)green, (byte)blue);
+                    SPIclass.SendPixels(pixelColors);
+                    Task.Delay(50).Wait();
+                    location++;
 
-                
+                    while (red == 250 && green < 250)
+                    {
+                        if (green == 250) break;
+                        green = green + changeamount;
 
-                while (true)
-                {
-                    
+                        if (location == 36) location = 0;
+                        pixelColors[location] = Color.FromArgb((byte)Brightness, (byte)red, (byte)green, (byte)blue);
+                        SPIclass.SendPixels(pixelColors);
+                        Task.Delay(50).Wait();
+                        location++;
+                    }
+                    while (red > 0 && green == 250)
+                    {
+                        if (red == 0) break;
+                        red = red - changeamount;
+
+                        if (location == 36) location = 0;
+                        pixelColors[location] = Color.FromArgb((byte)Brightness, (byte)red, (byte)green, (byte)blue);
+                        SPIclass.SendPixels(pixelColors);
+                        Task.Delay(50).Wait();
+                        location++;
+                    }
+                    while (green == 250 && blue < 250)
+                    {
+                        if (blue == 250) break;
+                        blue = blue + changeamount;
+
+                        if (location == 36) location = 0;
+                        pixelColors[location] = Color.FromArgb((byte)Brightness, (byte)red, (byte)green, (byte)blue);
+                        SPIclass.SendPixels(pixelColors);
+                        Task.Delay(50).Wait();
+                        location++;
+                    }
+                    while (green > 0 && blue == 250)
+                    {
+                        if (green == 0) break;
+                        green = green - changeamount;
+
+                        if (location == 36) location = 0;
+                        pixelColors[location] = Color.FromArgb((byte)Brightness, (byte)red, (byte)green, (byte)blue);
+                        SPIclass.SendPixels(pixelColors);
+                        Task.Delay(50).Wait();
+                        location++;
+                    }
+                    while (red < 250 && blue == 250)
+                    {
+                        if (red == 250) break;
+                        red = red + changeamount;
+
+                        if (location == 36) location = 0;
+                        pixelColors[location] = Color.FromArgb((byte)Brightness, (byte)red, (byte)green, (byte)blue);
+                        SPIclass.SendPixels(pixelColors);
+                        Task.Delay(50).Wait();
+                        location++;
+                    }
+                    while (red == 250 && blue > 0)
+                    {
+                        if (blue == 0) break;
+                        blue = blue - changeamount;
+
+                        if (location == 36) location = 0;
+                        pixelColors[location] = Color.FromArgb((byte)Brightness, (byte)red, (byte)green, (byte)blue);
+                        SPIclass.SendPixels(pixelColors);
+                        Task.Delay(50).Wait();
+                        location++;
+                    }
                 }
             });
         }

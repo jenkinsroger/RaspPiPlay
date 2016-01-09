@@ -30,12 +30,13 @@
                 </DataTemplate>
             </ComboBox.ItemTemplate>
         </ComboBox>
-        <Button x:Name="btnColorSender" Content="SELECT" HorizontalAlignment="Left" Margin="232,9,0,0" VerticalAlignment="Top" Click="btnColorSender_Click" Foreground="White" Background="Red"/>
+        <Button x:Name="btnColorSender" Content="SELECT" HorizontalAlignment="Left" Margin="232,9,0,0" VerticalAlignment="Top" Click="btnColorSender_Click" Foreground="White" Background="Red" Height="43"/>
         <Button x:Name="btnFader" Content="FADER" HorizontalAlignment="Left" Margin="159,57,0,0" VerticalAlignment="Top" Click="btnFader_Click" Foreground="White" Background="Red" Width="68"/>
         <Button x:Name="btnRainbow" Content="XMAS" HorizontalAlignment="Left" Margin="94,57,0,0" VerticalAlignment="Top" Click="btnRainbow_Click" Foreground="White" Background="Red"/>
         <Button x:Name="btnCFader" Content="C FADE" HorizontalAlignment="Left" Margin="232,57,0,0" VerticalAlignment="Top" Click="btnCFader_Click" Foreground="White" Background="Red" Width="68"/>
         <Button x:Name="btnTwinkle" Content="TWINKLE" HorizontalAlignment="Left" Margin="86,94,0,0" VerticalAlignment="Top" Click="btnTwinkle_Click" Foreground="White" Background="Red" Width="68" FontSize="12"/>
         <Button x:Name="btnCylon" Content="CYLON" HorizontalAlignment="Left" Margin="159,94,0,0" VerticalAlignment="Top" Click="btnCylon_Click" Foreground="White" Background="Red" Width="68" FontSize="12"/>
         <Button x:Name="btnColorShift" Content="Shift" HorizontalAlignment="Left" Margin="232,94,0,0" VerticalAlignment="Top" Click="btnColorShift_Click" Foreground="White" Background="Red" Width="68" FontSize="12" Height="28"/>
+        <Button x:Name="btnStopAnimation" Content="STOP ALL ANIMATIONS" HorizontalAlignment="Left" Margin="86,127,0,0" VerticalAlignment="Top" Click="btnStopAnimation_Click" Foreground="White" Background="Red" Width="214" FontSize="12"/>
     </Grid>
 </Page>

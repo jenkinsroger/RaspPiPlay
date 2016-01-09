@@ -86,6 +86,14 @@ namespace RaspPiPlay
         {
             LedStrip.ColorShift();
         }
+
+        private void btnStopAnimation_Click(object sender, RoutedEventArgs e)
+        {
+            Apa102.ColorFadeRun = false;
+            Apa102.CyclonRun = false;
+            Apa102.fadeRun = false;
+            Apa102.TwinkleRun = false;
+        }
     }
 
     public class NamedColor

@@ -28,6 +28,8 @@ namespace RaspPiPlay
         {
             this.InitializeComponent();
             _main = this;
+
+            textBlock.Text = DateTime.Now.TimeOfDay.Hours.ToString() + ":" + DateTime.Now.TimeOfDay.Minutes.ToString();
         }
 
         private void button_Click(object sender, RoutedEventArgs e)
