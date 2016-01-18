@@ -5,26 +5,26 @@
     xmlns:local="using:RaspPiPlay"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d">
+    mc:Ignorable="d" Width="800" Height="480">
 
-    <Grid Background="Black">
-        <Rectangle Fill="#FF1E1EA8" Stroke="#FF1E1EA8" Height="16" VerticalAlignment="Top" HorizontalAlignment="Left" Width="356"/>
-        <Rectangle Fill="#FF1E1EA8" Stroke="#FF1E1EA8" Margin="340,0,0,0" HorizontalAlignment="Left" Width="16" Height="200" VerticalAlignment="Top"/>
-        <Rectangle Fill="#FF1E1EA8" Stroke="#FF1E1EA8" Margin="0,184,0,0" Height="16" VerticalAlignment="Top" HorizontalAlignment="Left" Width="356"/>
-        <Rectangle Fill="#FF1E1EA8" Stroke="#FF1E1EA8" HorizontalAlignment="Left" Width="41" Height="200" VerticalAlignment="Top"/>
-        <Rectangle Fill="#FF00D1FF" HorizontalAlignment="Left" Height="19" Margin="-12,56,0,0" Stroke="#FF080808" VerticalAlignment="Top" Width="53" StrokeThickness="3"/>
-        <TextBlock x:Name="HomeText" HorizontalAlignment="Left" Margin="-2,56,0,0" TextWrapping="Wrap" Text=" HOME" VerticalAlignment="Top" Height="16" Width="41" FontSize="12"/>
-        <Rectangle Fill="#FF00D1FF" HorizontalAlignment="Left" Height="19" Margin="-12,77,0,0" Stroke="#FF080808" VerticalAlignment="Top" Width="53" StrokeThickness="3"/>
-        <TextBlock x:Name="HomeText_Copy" HorizontalAlignment="Left" Margin="0,77,0,0" TextWrapping="Wrap" Text=" TEMP" VerticalAlignment="Top" Height="16" Width="41" FontSize="12"/>
-        <Rectangle Fill="#FF00D1FF" HorizontalAlignment="Left" Height="19" Margin="-12,98,0,0" Stroke="#FF080808" VerticalAlignment="Top" Width="53" StrokeThickness="3"/>
-        <TextBlock x:Name="HomeText_Copy1" HorizontalAlignment="Left" Margin="0,98,0,0" TextWrapping="Wrap" Text=" LIGHT" VerticalAlignment="Top" Height="16" Width="41" FontSize="12"/>
-        <Rectangle Fill="#FF1E1EA8" Stroke="#FF1E1EA8" Height="13" VerticalAlignment="Top" Margin="39,71,0,0" HorizontalAlignment="Left" Width="315"/>
-        <TextBlock x:Name="txtDate" HorizontalAlignment="Left" Margin="46,21,0,0" TextWrapping="Wrap" Text="TUESDAY, JANUARY 15 2016" VerticalAlignment="Top" Width="289" Foreground="#FFFDFDFD" TextAlignment="Center"/>
-        <TextBlock x:Name="txtTime" HorizontalAlignment="Left" Margin="46,46,0,0" TextWrapping="Wrap" Text="05:36 PM" VerticalAlignment="Top" Width="289" Foreground="#FFFDFDFD" TextAlignment="Center"/>
-        <TextBlock x:Name="txtTemp" HorizontalAlignment="Left" Margin="46,89,0,0" TextWrapping="Wrap" Text="76°F" VerticalAlignment="Top" Height="44" Width="284" Foreground="White" FontSize="33.333" TextAlignment="Center"/>
-        <Button x:Name="btnLightOn" Content="LIGHTS ON" HorizontalAlignment="Left" Margin="46,150,0,0" VerticalAlignment="Top" Background="#FF20FF16" Height="29" VerticalContentAlignment="Top" HorizontalContentAlignment="Left" FontSize="12"/>
-        <Button x:Name="btnLightOff" Content="LIGHTS OFF" HorizontalAlignment="Left" Margin="130,150,0,0" VerticalAlignment="Top" Background="#FFC1571A" Height="29" VerticalContentAlignment="Top" HorizontalContentAlignment="Left" FontSize="12"/>
-        <Button x:Name="btnSettings" Content="SETTINGS" HorizontalAlignment="Left" Margin="262,150,0,0" VerticalAlignment="Top" Background="#FFF70000" Height="29" VerticalContentAlignment="Top" HorizontalContentAlignment="Left" FontSize="12"/>
+    <Grid Background="Black" Width="800" Height="480">
+        <Rectangle Fill="#FF1E1EA8" Stroke="#FF1E1EA8" Height="16" VerticalAlignment="Top" HorizontalAlignment="Left" Width="800"/>
+        <Rectangle Fill="#FF1E1EA8" Stroke="#FF1E1EA8" Margin="784,10,0,0" HorizontalAlignment="Left" Width="16" Height="460" VerticalAlignment="Top"/>
+        <Rectangle Fill="#FF1E1EA8" Stroke="#FF1E1EA8" Margin="10,464,0,0" Height="16" VerticalAlignment="Top" HorizontalAlignment="Left" Width="790"/>
+        <Rectangle Fill="#FF1E1EA8" Stroke="#FF1E1EA8" HorizontalAlignment="Left" Width="119" Height="464" VerticalAlignment="Top" Margin="0,16,0,0"/>
+        <Rectangle Fill="#FF00D1FF" HorizontalAlignment="Left" Height="37" Margin="-12,56,0,0" Stroke="#FF080808" VerticalAlignment="Top" Width="131" StrokeThickness="3"/>
+        <TextBlock x:Name="HomeText" HorizontalAlignment="Left" Margin="0,56,0,0" TextWrapping="Wrap" Text=" HOME" VerticalAlignment="Top" Height="32" Width="119" FontSize="20" TextAlignment="Center"/>
+        <Rectangle Fill="#FF00D1FF" HorizontalAlignment="Left" Height="37" Margin="-12,98,0,0" Stroke="#FF080808" VerticalAlignment="Top" Width="131" StrokeThickness="3"/>
+        <TextBlock x:Name="HomeText_Copy" HorizontalAlignment="Left" Margin="0,98,0,0" TextWrapping="Wrap" Text=" TEMP" VerticalAlignment="Top" Height="34" Width="119" FontSize="20" TextAlignment="Center"/>
+        <Rectangle Fill="#FF00D1FF" HorizontalAlignment="Left" Height="37" Margin="-12,140,0,0" Stroke="#FF080808" VerticalAlignment="Top" Width="131" StrokeThickness="3"/>
+        <TextBlock x:Name="HomeText_Copy1" HorizontalAlignment="Left" Margin="0,140,0,0" TextWrapping="Wrap" Text=" LIGHT" VerticalAlignment="Top" Height="37" Width="119" FontSize="20" TextAlignment="Center"/>
+        <Rectangle Fill="#FF1E1EA8" Stroke="#FF1E1EA8" Height="37" VerticalAlignment="Top" Margin="119,140,0,0" HorizontalAlignment="Left" Width="671"/>
+        <TextBlock x:Name="txtDate" HorizontalAlignment="Left" Margin="119,16,0,0" TextWrapping="Wrap" Text="TUESDAY, JANUARY 15 2016" VerticalAlignment="Top" Width="667" Foreground="#FFFDFDFD" TextAlignment="Center" FontSize="26.667"/>
+        <TextBlock x:Name="txtTime" HorizontalAlignment="Left" Margin="119,61,0,0" TextWrapping="Wrap" Text="05:36 PM" VerticalAlignment="Top" Width="665" Foreground="#FFFDFDFD" TextAlignment="Center" FontSize="46.667"/>
+        <TextBlock x:Name="txtTemp" HorizontalAlignment="Left" Margin="119,182,0,0" TextWrapping="Wrap" Text="76°F" VerticalAlignment="Top" Height="77" Width="665" Foreground="White" FontSize="53.333" TextAlignment="Center"/>
+        <Button x:Name="btnLightOn" Content="LIGHTS ON" HorizontalAlignment="Left" Margin="124,420,0,0" VerticalAlignment="Top" Background="#FF20FF16" Height="39" VerticalContentAlignment="Top" HorizontalContentAlignment="Left" FontSize="16.667" Width="113"/>
+        <Button x:Name="btnLightOff" Content="LIGHTS OFF" HorizontalAlignment="Left" Margin="242,420,0,0" VerticalAlignment="Top" Background="#FFC1571A" Height="39" VerticalContentAlignment="Top" HorizontalContentAlignment="Left" FontSize="16.667" Width="113"/>
+        <Button x:Name="btnSettings" Content="SETTINGS" HorizontalAlignment="Left" Margin="687,420,0,0" VerticalAlignment="Top" Background="#FFF70000" Height="39" VerticalContentAlignment="Top" HorizontalContentAlignment="Left" FontSize="16.667" Width="92"/>
 
 
     </Grid>
